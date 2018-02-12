@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crazy coin shop</title>
+
+    <link rel="stylesheet" href="styles.css" type="text/css">
+	
+	<style>
+		li
+		{
+			color:blue;
+			list-style-type: none;
+			line-height: 1.5;
+		}
+		ul
+		{
+			padding: 0; margin: 0;
+			/* Отступ слева в браузере IE и Opera */
+			/*margin-left: 0; */
+			/* Отступ слева в браузере Firefox, Safari, Chrome */
+			/*padding-left: 0; */
+		}
+		a:link, a:visited
+		{
+			color:black;
+		}
+		a:hover, a:active 
+		{
+			color: red;
+		}
+		a
+		{
+			text-decoration: none;
+		}
+	</style>
+
+    <script>	
+    	var menu_visible=-1;
+		function menu_item_show(id)
+		{
+			menu_hide();
+			menu_visible=id;
+			var p=document.getElementById('menu-item-'+id);
+			var pos=p.getBoundingClientRect().left;
+			document.getElementById('menu-item-'+id+'-div').style="display:inline;position:absolute;left:"+pos+"px;padding-top:5px;";
+			//document.getElementById('menu-item-'+id+'-div').style="display:inline;position:absolute;left:200px;";
+		}
+		
+		function menu_item_hide(id)
+		{
+			document.getElementById('menu-item-'+id+'-div').style="display:none;";
+		}
+		function menu_hide()
+		{
+			var i;
+			for(i=0;i<4;i++)
+			{
+				menu_item_hide(i);
+			}
+		}
+		
+		function onmouseenter_li(id,i)
+		{
+			document.getElementById('menu-item-'+id+'-ul').getElementsByTagName('li')[i].style="color:red;";
+		}
+		function onmouseleave_li(id,i)
+		{
+			document.getElementById('menu-item-'+id+'-ul').getElementsByTagName('li')[i].style="color:blue;";
+		}
+		
+		function ter_click()
+		{
+			alert(event.srcElement.id);
+			//alert(document.getElementById('menu-item-0-ul').getElementsByTagName('li')[0].innerHTML);
+			//var p=document.getElementById('ter-id');
+			//alert(p.getBoundingClientRect().left);
+			//alert("left="+p.getBoundingClientRect().left);
+			
+			
+			/*   //alert elem1
+			var kk=document.getElementById('menu-2');
+			var kk2=kk.getElementsByTagName('li');
+			alert(kk2[0].innerHTML );	
+			*/
+			
+			/*   //alert elem1
+			alert(document.getElementById('menu-2').getElementsByTagName('li')[0].innerHTML);
+			*/
+			
+			/*   //alert elem1
+			var kk=document.getElementsByTagName('ul');
+			var kk2=kk[0].getElementsByTagName('li');
+			alert(kk2[0].innerHTML );
+			*/
+		}
+    </script>
+
+
+</head>
+<body>
+	<div style="left:20px;position:absolute;" >
+		<a href="menu_02.html"><img src="main_face.png" style="height:95px;"></a>
+		<br>
+		<span style="padding-left:20px;color:black;">LOGO</span>
+	</div>
+    <div class="menu-wrapper" onmouseleave="menu_hide();">
+    	<span id="menu-item-0" class="menu-item" onmouseenter="menu_item_show(0);">Товар</span>
+        <span id="menu-item-1" class="menu-item" onmouseenter="menu_item_show(1);">About</span>
+        <span id="menu-item-2" class="menu-item" onmouseenter="menu_item_show(2);">Projects</span>
+        <span id="menu-item-3" class="menu-item" onmouseenter="menu_item_show(3);">Career</span>
+        
+		<div id="dynamic-menu">
+			<!--Menu-->
+			<div align=center id="menu-item-0-div" style="display:none;" onmouseleave="menu_item_hide(0);">
+				<ul id="menu-item-0-ul">
+					<!--
+					<li onmouseenter="onmouseenter_li(0,0);" onmouseleave="onmouseleave_li(0,0);">
+					<li onmouseenter="onmouseenter_li(0,1);" onmouseleave="onmouseleave_li(0,1);">Menu_2
+					<li onmouseenter="onmouseenter_li(0,2);" onmouseleave="onmouseleave_li(0,2);">Menu_3
+					<li onmouseenter="onmouseenter_li(0,3);" onmouseleave="onmouseleave_li(0,3);">Menu_4
+					-->
+					<li><a href="Lg.html" target="main-frame-name">LG P713</a>
+					<li><a href="Samsung.html" target="main-frame-name">Content 02</a>
+				</ul>
+			</div>
+			<!--About-->
+			<div align=center id="menu-item-1-div" style="display:none;" onmouseleave="menu_item_hide(1);">
+				<ul id="menu-item-1-ul">
+					<li onmouseenter="onmouseenter_li(1,0);" onmouseleave="onmouseleave_li(1,0);">About_1
+					<li onmouseenter="onmouseenter_li(1,1);" onmouseleave="onmouseleave_li(1,1);">About_2
+					<li onmouseenter="onmouseenter_li(1,2);" onmouseleave="onmouseleave_li(1,2);">About_3
+					<li onmouseenter="onmouseenter_li(1,3);" onmouseleave="onmouseleave_li(1,3);">About_4
+				</ul>
+			</div>
+			<!--Projects-->
+			<div align=center id="menu-item-2-div" style="display:none;" onmouseleave="menu_item_hide(2);">
+				<ul id="menu-item-2-ul">
+					<li onmouseenter="onmouseenter_li(2,0);" onmouseleave="onmouseleave_li(2,0);">Projects_1
+					<li onmouseenter="onmouseenter_li(2,1);" onmouseleave="onmouseleave_li(2,1);">Projects_2
+					<li onmouseenter="onmouseenter_li(2,2);" onmouseleave="onmouseleave_li(2,2);">Projects_3
+					<li onmouseenter="onmouseenter_li(2,3);" onmouseleave="onmouseleave_li(2,3);">Projects_4
+				</ul>
+			</div>
+			<!--Career-->
+			<div align=center id="menu-item-3-div" style="display:none;" onmouseleave="menu_item_hide(3);">
+				<ul id="menu-item-3-ul">
+					<li onmouseenter="onmouseenter_li(3,0);" onmouseleave="onmouseleave_li(3,0);">Career_1
+					<li onmouseenter="onmouseenter_li(3,1);" onmouseleave="onmouseleave_li(3,1);">Career_2
+					<li onmouseenter="onmouseenter_li(3,2);" onmouseleave="onmouseleave_li(3,2);">Career_3
+					<li onmouseenter="onmouseenter_li(3,3);" onmouseleave="onmouseleave_li(3,3);">Career_4
+				</ul>
+			</div>
+			
+			
+			<!--
+			
+			<div align=center id="menu-2" style="display:none;" onmouseleave="m2()">
+				<ul style="mark:none">
+					<li id="el1" onmouseenter="document.getElementById('el1').style='color:red'" onmouseleave="document.getElementById('el1').style='color:black'">elem1
+					<li id="el2" onmouseenter="document.getElementById('el2').style='color:red'" onmouseleave="document.getElementById('el2').style='color:black'">elem2
+				</ul>
+			</div>
+			-->
+		</div>
+    </div>
+	
+	<!--
+	<center><input type=button value="ter" id="ter-id" onclick="ter_click()" style="width:200px;height:200px;"></center>
+	-->
+	<iframe name="main-frame-name" src="main_page.html" width="100%" height=800 frameborder="0" >
+</body>
+</html>
+
+
+<!--
+
+<table>
+  <tr>
+    <td>один</td> <td>два</td>
+  </tr>
+  <tr>
+    <td>три</td>  <td>четыре</td>
+  </tr>
+</table>
+
+<script>
+var table = document.body.children[0];
+
+alert( table.rows[0].cells[0].innerHTML ) // "один"
+</script>
+
+
+-->

@@ -1,0 +1,20 @@
+span
+{
+	color:red;
+}
+.crazy-coin
+{
+	color: red;
+	background-color:lime;
+	font-weight: bold;
+	font-family: 'Arial';
+	border-color:pink;
+	border-style:solid;
+	padding:2px;
+	border-width:5px;
+}
+div.main-div
+{
+	text-align:center;
+	font-family: 'Arial';
+}

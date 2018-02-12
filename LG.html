@@ -1,0 +1,105 @@
+<html>
+
+	<head>
+		<title>
+			Смартфон LG-Optimus L7 II
+		</title>
+		
+		<!-------			CSS			----->
+		<style>
+			.little-picture
+			{
+				width:10%;
+				border-style: solid;
+			}
+			.middle
+			{
+				text-align:center;
+			}
+			.super_processor
+			{
+				font-weight: 800;
+				text-decoration: wavy underline ;
+			}
+			.bean
+			{
+				font-family:"Comic Sans MS";
+			}
+		</style>
+		<!----------------------------------->
+		
+		
+		
+		<!------			JS			----->
+		<script>
+			var show_error=0;
+			var main_pict_alt='alt_01.jpg';
+			function change_main_pic(pict,alt)
+			{
+				main_pict_alt=alt;
+				document.getElementById("main_pic").setAttribute("src", pict);
+			}
+			function my_alt(element,pict)
+			{
+				if(element=="main_pic")
+				{
+					document.getElementById(element).setAttribute("src", main_pict_alt);
+				}
+				else
+				{
+					document.getElementById(element).setAttribute("src", pict);
+				}
+				//document.getElementById("main_pic").src=pict;
+				if(!show_error)
+				{
+					alert("Помилка завантаження деяких зображень. Були використані локальні зображення.");
+					show_error=1;
+				}
+			}
+		</script>
+		<!----------------------------------->	
+	</head>
+	
+	<!--**********************************************-->
+	<!--*********			BODY			**********-->
+	<!--**********************************************-->
+	<body>
+		<h1 style="text-align: center;">
+			Телефон <span style="font-family: 'Castellar'">LG P713</span>
+		</h1>
+		
+		<!------			images			------>
+		<div class="middle">
+			<img id="main_pic" src="pict_01.jpg" alt="sorry, mega-fail" onerror="my_alt('main_pic','alt_01.jpg');"><br>
+			<img class="little-picture" id="little_pic_01" src="pict_01.jpg" onclick="change_main_pic('pict_01.jpg','alt_01.jpg')" onerror="my_alt('little_pic_01','alt_01.jpg');">
+			<img class="little-picture" id="little_pic_02" src="pict_02.jpg" onclick="change_main_pic('pict_02.jpg','alt_02.jpg')" onerror="my_alt('little_pic_02','alt_02.jpg');">
+		</div>
+		<!---------------------------------------->	
+		
+		
+		<!------			about			------>
+		<hr>
+		<h3>Характеристики:</h3>
+		<ul>
+			<li><span style="color:red">Рекордная</span> батарея 2460 МАЧ
+			<li><div style="padding-bottom:5;"><span class="super_processor">МОЩНЫЙ</span> 2-ЯДЕРНЫЙ ПРОЦЕССОР 1.0 ГГЦ</div>
+			<li>ОС ANDROID 4.1 <span style="padding-left:10;padding-right:10">—</span>
+			<span style="color:Green;">J</span>
+			<span style="color:Blue">E</span>
+			<span style="color:Cyan">L</span>
+			<span style="color:Magenta">L</span>
+			<span style="color:Red">Y</span>
+			<span class="bean" style="padding-left:10">B•E•A•N</span>
+			<li>КАМЕРа 8 МП с BSI датчиком
+		</ul>
+		<!---------------------------------------->
+		
+		<h2 style="text-align:center;"><a href="comments.html"> Коментарі</a></h2>
+		
+	</body>
+	<!--*********************************************-->
+	<!--*********************************************-->
+
+</html>
+
+
